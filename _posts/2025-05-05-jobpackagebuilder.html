@@ -1,0 +1,116 @@
+---
+layout: post
+title: "Exploring Agentic AI Through a Job Application Automation Project"
+subtitle: "How I automated my job hunt while learning more about AI workflows and LLMs."
+date: 2025-05-05 14:00:00 -0400
+background: '/img/posts/06.jpg'
+---
+
+<h2>Exploring Agentic AI Through a Job Application Automation Project</h2>
+
+<p>Roughly a month ago, I was unexpectedly laid off from my role in product management. Definitely not ideal, but it's the unfortunate reality many of us have faced recently so I'm trying to make the best of it. Since then, I’ve been navigating the job market and reflecting on how much the application landscape has evolved.</p>
+
+<p>Positions fill quickly. Some postings receive hundreds of applicants within the first day. Generic resumes no longer make the cut. Tailoring each application is now essential. While AI tools are available, much of the effort still requires manual work: interpreting job postings, drafting cover letters, updating resumes, and managing all of it on a per-role basis.</p>
+
+<p>In parallel, there is an increasing demand for AI literacy in Product Management roles. In fact, during a training session at my previous company, the message was clear: if a company doesn't have an AI strategy, it's already falling behind. That same urgency applies to job seekers.</p>
+
+<p>So I asked myself: could I create a tool that supports my job search while also helping me sharpen my AI and technical skills?</p>
+
+<h2>Motivation for Building the Tool</h2>
+
+<p>This project began as a solution to a repetitive process:</p>
+
+<ul>
+  <li>Creating a folder for each new job opportunity</li>
+  <li>Copying my master resume</li>
+  <li>Using ChatGPT to draft a custom cover letter</li>
+  <li>Asking ChatGPT for feedback to improve my resume</li>
+  <li>Editing manually, then applying</li>
+</ul>
+
+<p>This workflow, while helpful, was time-consuming and fragmented. I wanted to consolidate and streamline the process with automation.</p>
+
+<h2>Current Capabilities</h2>
+
+<h3>Job Summary and Fit Analysis</h3>
+<p>The tool takes a job posting URL, parses its content, and produces a summary that highlights required skills. It also evaluates how well my existing resume aligns with the role, identifying strengths and opportunities for improvement.</p>
+
+<h3>Draft Cover Letter</h3>
+<p>Based on the job description and my resume, the tool generates a personalized draft cover letter. This provides a solid starting point that I can refine further.</p>
+
+<h3>Resume Suggestions</h3>
+<p>The system analyzes the job description and suggests specific changes to my resume to improve its alignment with the role. While I still manually update the resume, these insights are helpful.</p>
+
+<h3>Privacy-First Design Using Ollama</h3>
+<p>I chose to run everything locally using Ollama. This setup protects my data and allows me to test different open-source models. Although the performance is slower compared to cloud solutions, the tradeoff is worth it.</p>
+
+<h2>System Architecture and Components</h2>
+
+<h3>Inputs</h3>
+<ul>
+  <li>A job posting URL entered by the user</li>
+  <li>A saved copy of my master resume</li>
+</ul>
+
+<h3>Job Parsing Agent</h3>
+<p>Scrapes and cleans the job posting text using Langchain’s webBaseLoader. This process converts the listing into a format suitable for analysis.</p>
+
+<h3>Summarization Agent</h3>
+<p>Creates a concise summary of the job posting to make it easier to evaluate.</p>
+
+<h3>Skills Extraction Agent</h3>
+<p>Identifies and lists the key skills and qualifications mentioned in the job description.</p>
+
+<h3>Fit Analysis Agent</h3>
+<p>Compares the posting against my resume. It outlines areas where I match well, areas where I do not, and suggestions for better alignment.</p>
+
+<h3>Job Summary Document</h3>
+<p>Generates a Microsoft Word document that includes the summary, fit analysis, and original job posting content.</p>
+
+<h3>Cover Letter Agent</h3>
+<p>Generates a draft cover letter using the job summary and my resume. The result is stored as a Word document.</p>
+
+<h3>Resume Enhancement Agent</h3>
+<p>Produces a list of resume modifications to improve alignment with the job.</p>
+
+<h2>Technical Stack</h2>
+
+<ul>
+  <li><strong>Language Model:</strong> Ollama (tested with gemma3:4b and llama3.2:latest)</li>
+  <li><strong>Programming Language:</strong> Python</li>
+  <li><strong>Document Generation:</strong> python-docx</li>
+  <li><strong>File Operations:</strong> Standard Python OS and JSON libraries</li>
+  <li><strong>Interface:</strong> Command-line interface</li>
+</ul>
+
+<h2>Future Enhancements</h2>
+
+<ul>
+  <li>Fine-tune prompts to improve agent performance</li>
+  <li>Build a lightweight web interface using Flask</li>
+  <li>Implement a job fit scoring system</li>
+  <li>Evaluate job benefits and compensation as part of fit analysis</li>
+  <li>Reanalyze resume fit after changes</li>
+  <li>Track applications and follow-ups</li>
+  <li>Store previous applications in a database for pattern matching</li>
+  <li>Add an interview preparation component</li>
+</ul>
+
+<h2>Lessons Learned</h2>
+
+<h3>Rapid Development</h3>
+<p>With the assistance of ChatGPT, I built the initial prototype in about six hours. This accelerated pace made development enjoyable and productive.</p>
+
+<h3>Incremental Progress</h3>
+<p>Instead of building an all-in-one platform from the start, I focused on solving one problem at a time. This approach simplified debugging and kept the project manageable.</p>
+
+<h3>Learning by Building</h3>
+<p>This project has helped me understand how agentic workflows can be structured using LLMs. It has also sparked several new ideas for future tools.</p>
+
+<h3>Practical Power of Agents</h3>
+<p>Even in a basic setup, these agents are capable of handling unstructured data and generating useful, context-aware content. Just a few years ago, building something like this would have required a team and significant time. Today, it’s possible with a laptop and a bit of curiosity.</p>
+
+<hr>
+
+<p>Interested in building something similar or want to take a look at the code? Feel free to reach out!</p>
+<img class="img-fluid" src="\img\robots.png" alt="Robots and resumes">

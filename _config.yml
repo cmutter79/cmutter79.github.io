@@ -1,0 +1,26 @@
+title:              Product Thoughts & Side Quests
+email:              curtis.mutter@outlook.com
+description:        The personal blog of Curtis Mutter
+keywords:           blog, Product Management, Product Design, AI, Software for Product Managers, AI for Product Managers
+author:             Curtis Mutter
+baseurl:            ""
+url:                "https://cmutter79.github.io"
+
+# Social Profiles
+twitter_username:   
+github_username:    cmutter79
+facebook_username:  
+instagram_username: cmutter79 
+linkedin_username:  curtismutter
+
+# Add your google-analytics ID here to activate google analytics
+google_analytics:   UA-XXXXXXXXX-X # out your google-analytics code
+
+# Build settings
+markdown:           kramdown
+paginate:           5
+paginate_path:      "/posts/page:num/"
+plugins:
+  - jekyll-feed
+  - jekyll-paginate
+  - jekyll-sitemap ## Uncomment this line to silently generate a sitemaps.org compliant sitemap for your Jekyll site
