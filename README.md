@@ -14,7 +14,7 @@ This repository holds the official Jekyll version of the Clean Blog theme on Sta
 
 ### Using RubyGems
 
-When installing the theme using RubyGems, demo images, posts, and pages are not included. Follow the instructions below for complete setup.
+When installing the posts, and pages are not included. Follow the instructions below for complete setup.
 
 1. (Optional) Create a new Jekyll site: `jekyll new my-site`
 2. Replace the current theme in your `Gemfile` with `gem "jekyll-theme-clean-blog"`.
