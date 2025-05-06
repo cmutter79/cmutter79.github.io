@@ -3,7 +3,7 @@ email:              curtis.mutter@outlook.com
 description:        The personal blog of Curtis Mutter
 keywords:           blog, Product Management, Product Design, AI, Software for Product Managers, AI for Product Managers
 author:             Curtis Mutter
-baseurl:            "/cmutter79" # the subpath of your site, e.g. /blog
+baseurl:            "" # the subpath of your site, e.g. /blog
 url:                "https://cmutter79.github.io"
 
 # Social Profiles
