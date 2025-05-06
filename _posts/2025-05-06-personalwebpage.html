@@ -1,0 +1,85 @@
+---
+layout: post
+title: "Building My Personal Website on GitHub Pages"
+subtitle: "A short detour into YAML, robots, and getting things to actually work"
+date: 2025-05-06 09:00:00 -0400
+background: '/img/posts/07.JPG'
+tags: [github, website, free, jekyll]
+---
+
+<p><strong>Let’s be honest — I didn’t have high expectations for the first website I've published in a long (long) time.</strong> But somewhere between accidentally deploying to the wrong repo and trying to decide on the perfect background, I found myself getting into a bit of a flow and enjoying the process more than I thought I would. Here’s how I went from “should really make a website?” to publishing a live, styled, blog-ready homepage using GitHub Pages — all powered by Markdown, Jekyll, and <s>some</s> lots of help from ChatGPT.</p>
+<img src="/img/geocities_hero_2.jpg" alt="A retro Geocities-style website with a rainbow background and animated GIFs" style="width: 100%; max-width: 600px; margin: 20px auto; display: block; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" />
+
+<h2>Why Build a Personal Website?</h2>
+
+<p>I wanted a place to share my thoughts on product, technology, and AI. Also, like many in tech, I’m currently job hunting — and having a place to show off projects, post blog entries, and share my resume just felt like the right move. It gave me an opportunity to tinker at a side project and maybe learn something, while setting up a useful site to capture some of those details.</p>
+
+<p>My requirements were simple:</p>
+
+<ul>
+  <li>It should look good (but not flashy)</li>
+  <li>I should be able to write about some of my projects without too much effort</li>
+  <li>I wanted full control, but low hosting cost (read: free)</li>
+  <li>I wanted to manage it with VS Code, since I’m getting more comfortable there</li>
+</ul>
+
+<h2>Choosing the Stack</h2>
+
+<p>I landed on GitHub Pages + Jekyll because it checked all the boxes. It's free, version-controlled, customizable, and plays nicely with Markdown. Plus, deploying means pushing to a repo — no servers, no FTP, no problems.</p>
+
+<h3>Theme Time: Clean Blog</h3>
+<p>I chose the <a href="https://jekyllthemes.io/theme/startbootstrap-clean-blog-jekyll" target="_blank">Clean Blog Jekyll theme</a>, which gave me a slick, mobile-friendly layout out of the box. Blog-ready, content-first, and simple to customize (so far).</p>
+
+<h2>Standing It Up</h2>
+
+<h3>Step 1: Create the GitHub Repo</h3>
+<p>I created a repository named exactly <code>cmutter79.github.io</code>. This is the magic name GitHub uses for user pages. Anything I push to this repo gets published automatically at <code>https://cmutter79.github.io</code>.</p>
+
+<h3>Step 2: Clone Locally and Add My Site</h3>
+<p>Using VS Code, I cloned the repo and dropped in my Jekyll theme files. From there, I started tweaking:</p>
+
+<ul>
+  <li>Updated the <code>_config.yml</code> file with my site name, description, and author info</li>
+  <li>Set <code>baseurl: ""</code> and <code>url: "https://cmutter79.github.io"</code> (critical, more on that below!)</li>
+  <li>Created a draft of my first blog post, just to make sure everything rendered properly</li>
+</ul>
+
+<h3>Step 3: First Push… to the Wrong Repo</h3>
+<p>Here’s where things got entertaining. I initially pushed to a project repo named something like <code>https://cmutter79.github.io/cmutter79</code> instead of the proper <code>cmutter79.github.io</code>. Result? The site appeared — and looked like it was from 1996. Oops.</p>
+
+<h3>Step 4: The Great <code>baseurl</code> Lesson</h3>
+<p>If your site is hosted at a subdirectory like <code>/my-site</code>, you need to set <code>baseurl: "/my-site"</code> in your config. But since I was using a user site, I needed <code>baseurl: ""</code>.</p>
+
+<h2>Troubleshooting Git Like a Pro(duct Manager)</h2>
+
+<p>At one point I ran into this gem of an error:</p>
+
+<pre><code>
+error: failed to push some refs to 'https://github.com/cmutter79/repo-name.git'
+hint: Updates were rejected because the remote contains work that you do not have locally.
+</code></pre>
+
+<p>Turns out I needed to either pull remote changes or force push if I wanted my local version to overwrite. Since I knew I hadn’t added anything important to GitHub yet, I used:</p>
+
+<pre><code>git push --force origin main</code></pre>
+
+<p>One heroic command later, and the site was live — and finally styled.</p>
+
+<h2>Adding the Fun</h2>
+
+<p>Along the way, I created some fun visuals (robots writing resumes, anyone?) and wrote up a couple of initial blog posts getting the feel of markdown sorted out. I even wired up Google Analytics to track site usage. Spoiler... it's just been me so far.</p>
+
+<h2>Lessons Learned</h2>
+
+<ul>
+  <li>💡 GitHub Pages is powerful, but unforgiving about naming conventions</li>
+  <li>💡 Your <code>_config.yml</code> is your friend — don’t neglect it</li>
+  <li>💡 When in doubt, push it, break it, fix it, repeat (the dev way)</li>
+</ul>
+
+<h2>Final Thoughts</h2>
+
+<p>Standing up a personal website doesn’t need to be complicated. Between free hosting, customizable themes, and modern static site generators, you can have something polished and professional in an afternoon. I’ll continue to share posts on product thinking, AI experiments, and projects like my Job Helper tool — and now I have the perfect place to do it.</p>
+
+<p>If you're curious about how to set yours up or want to see the code behind mine, reach out! Or better yet — fork a theme, break some stuff, and ship your own.</p>
+
